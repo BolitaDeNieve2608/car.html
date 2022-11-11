@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <title>Carrito de Ana</title>
+        <link rel="stylesheet" href="css/styles.css">
+        <style>
+            .btn-primary{
+            width: 30px; height: 30px;
+            background-color: aquamarine;
+            border-radius: .20em;
+            cursor: pointer;
+            transition: background-color 1s;
+         }
+         body{
+            background-color: rgb(230, 231, 212);
+         }
+        </style>
+    </head>
+<body>
+    <main>
+    <table>
+        <thead>
+        <tr>
+            <th>Precio</th>
+            <th>Producto</th>
+        </tr>
+        </thead>
+        <tbody><tr>
+            <td> {{preciopapa}} </td>
+          <td>Patata</td>
+          <td><img src="1imagen.png"></td><td><button class="btn btn-primary" @click="sumarpatata()"marcador="1">+</button></td>
+        </tr>
+        <tr>
+            <td> {{preciocebolla}} </td>
+          <td>Cebolla</td>
+          <td><img src="2imagen.png"></td><td><button class="btn btn-primary" @click="sumarcebolla()" marcador="2">+</button></td>
+        </tr>
+        <tr>
+            <td> {{preciocalabacin}} </td>
+          <td>Calabacin</td>
+          <td><img src="3imagen.png"></td><td><button class="btn btn-primary" @click="sumarcalabacin()" marcador="3">+</button></td>
+        </tr>
+        <tr>
+            <td> {{preciofresa}}</td>
+            <td>Fresas</td>
+            <td><img src="4imagen.png"></td><td><button class="btn btn-primary" @click="sumarfresa()" marcador="4">+</button></td>
+          </tr>
+        </tbody>
+        </table>
+
+        <h1>Carrito</h1>
+        <p v-if="totalpapa>0"> {{totalpapa}} x Patata - {{preciopapa}} <button @click="eliminarpapa()">X</button></p>
+        <p v-if="totalcebolla>0"> {{totalcebolla}} x Cebolla - {{preciocebolla}} <button @click="eliminarcebolla()">X</button></p>
+        <p v-if="totalcalabacin>0"> {{totalcalabacin}} x Calabacin - {{preciocalabacin}} <button @click="eliminarcalabacin()">X</button></p>
+        <p v-if="totalfresas>0"> {{totalfresas}} x Fresa - {{preciofresa}} <button @click="eliminarfresa()">X</button></p>
+        <div v-if="total>0">
+            <!--<h3> <letra>Total de la Compra: {{ total }}</letra></h3>--->
+        </div>
+        <h3> <letra>Total de la Compra: {{ total }}</letra></h3>
+        <button @click="eliminar()" value="eliminar">Vaciar</button>
+    </main>
+
+        <script src="https://unpkg.com/vue@2.1.10/dist/vue.js"></script>
+        <script src="main.js"></script>
+    </body>
+</html>
